@@ -1,5 +1,8 @@
 ## @wxml/generator
 
+[![npm version](https://img.shields.io/npm/v/@wxml/generator)](https://www.npmjs.com/package/@wxml/generator)
+
+
 A wxml code generator from AST parsed by @wxml/parser.
 
 ## Basic Usage
