@@ -1,0 +1,43 @@
+{
+  "name": "@wxml/generator",
+  "version": "0.1.0",
+  "description": "A wxml code generator from AST parsed by @wxml/parser",
+  "main": "lib/index.js",
+  "files": [
+    "/lib"
+  ],
+  "keywords": [
+    "wxml",
+    "code generator",
+    "wechat",
+    "wexin",
+    "miniprogram"
+  ],
+  "author": "dhlolo <dhlolo@163.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "rimraf ./lib && tsc",
+    "prepublish": "npm run build",
+    "test": "npm run puretest",
+    "puretest": "mocha tests/ --require chai --bail --check-leaks"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wxmlfile/wxml-generator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/wxmlfile/wxml-generator/issues"
+  },
+  "homepage": "https://github.com/wxmlfile/wxml-generator#readme",
+  "devDependencies": {
+    "@types/mocha": "^10.0.0",
+    "@wxml/parser": "^0.4.0",
+    "chai": "^4.3.7",
+    "mocha": "^10.1.0",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.9.3"
+  },
+  "peerDependencies": {
+    "@wxml/parser": "^0.4.0"
+  }
+}
