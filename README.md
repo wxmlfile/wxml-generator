@@ -4,6 +4,7 @@
 
 
 A wxml code generator from AST parsed by @wxml/parser.
+`traverse` has Updated to [wxml-traverse](https://github.com/wxmlfile/wxml-traverse)
 
 ## Basic Usage
 
@@ -27,11 +28,20 @@ const AST = parse(`
     </view>
   </view>
 `);
-const { generate, traverse } = require("@wxml/generator");
+const { generate } = require("@wxml/generator");
+// const { traverseStatic } = require("@wxml/generator");
+// traverseStatic(AST, {
+//     WXInterpolation(node) {
+//         if (node.value === 'mallName') {
+//             node.value = 'somethingNew';
+//         }
+//     }
+// });
+const { traverse } = require('@wxml/traverse');
 traverse(AST, {
-    WXInterpolation(node) {
-        if (node.value === 'mallName') {
-            node.value = 'somethingNew';
+    WXInterpolation(path) {
+        if (path.node.value === 'mallName') {
+            path.node.value = 'somethingNew';
         }
     }
 });
@@ -39,3 +49,9 @@ const code = generate(AST);
 console.log("AST structure: ", AST);
 console.log("Code: ", code);
 ```
+
+## 贡献者
+
+<a href="https://github.com/wxmlfile/wxml-generator/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=wxmlfile/wxml-generator" />
+</a>

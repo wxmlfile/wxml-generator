@@ -88,13 +88,8 @@ function renderWXAttributeInterpolation(node, options) {
     return `{{${node.value}}}`;
 }
 
-// TODO: 测试决定是否需要补充，关于encodeEntities和xmlMode的逻辑
 function renderText(node, options) {
     let value = node.value;
-    // TODO: 这里关于encodeEntities和xmlMode的逻辑
-    // if (options.encodeEntities) {
-    //     value =
-    // }
     return value;
 }
 
